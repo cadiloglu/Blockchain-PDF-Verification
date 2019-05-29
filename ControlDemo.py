@@ -7,7 +7,7 @@ from tkinter import messagebox
 
 window = Tk()
 
-window.wm_minsize(200, 350)
+window.wm_minsize(600, 550)
 window.title("Blokchain Database Verification Program Demo (Version 1.0.12)")
 window.iconbitmap('icon.ico')
 
@@ -74,44 +74,34 @@ def send_button():
 
 #define Labels
 header = Label(window, text="HOSPITAL RECORD \nVERIFICATION SYSTEM", font=("arial", 20, "bold"), fg="steelblue", anchor=CENTER)
-header.grid(row=0, column=0)
+header.place(x=175, y=20)
 
 l1 = Label(window, text='Name')
-l1.grid(row=1, column=0)
-l1.grid_anchor(anchor=W)
+l1.place(x=150, y=150)
 
-l1 = Label(window, text='Surname', anchor=E)
-l1.grid(row=2, column=0)
-
-l1 = Label(window, text='')
-l1.grid(row=4, column=0)
-
-l1 = Label(window, text='')
-l1.grid(row=6, column=0)
+l2 = Label(window, text='Surname')
+l2.place(x=150, y=220)
 
 #define Entries
 name_text = StringVar()
 e1 = Entry(window, textvariable=name_text)
-e1.grid_anchor(anchor=W)
-e1.grid(row=1, column=1)
+e1.place(x=250, y=150)
 
 surname_text = StringVar()
 e2 = Entry(window, textvariable=surname_text)
-e2.grid(row=2, column=1)
-
+e2.place(x=250, y=220)
 
 #define Button
 b1 = ttk.Button(window, text="SEND", command=send_button)
-b1.grid(row=9, column=0, columnspan=2)
+b1.place(x=170, y=400)
 
 b2 = ttk.Button(window, text="Upload File")
-b2.grid(row=8, column=0, columnspan=2)
 b2.config(command=print_path)
+b2.place(x=380, y=400)
 
 #define List
 list1 = Listbox(window, height=5, width=45)
-list1.grid(row=7, column=0)
-
+list1.place(x=130, y=300)
 
 window.mainloop()
 
